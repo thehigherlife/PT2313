@@ -25,8 +25,10 @@ Library works with most arduino compatible processors and teensy3
 
 
 #define PT2313_VOL_REG        0x00 //00000000
-#define PT2313_L_ATT_REG      0xC0 //11000000
-#define PT2313_R_ATT_REG      0xE0 //11100000
+#define PT2313_FL_ATT_REG      0x80 //11000000
+#define PT2313_FR_ATT_REG      0xA0 //11100000
+#define PT2313_RL_ATT_REG      0xC0 //11000000
+#define PT2313_RR_ATT_REG      0xE0 //11100000
 #define PT2313_BASS_REG       0x60 //01101111
 #define PT2313_TREBLE_REG     0x70 //01110000
 
