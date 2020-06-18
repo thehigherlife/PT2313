@@ -109,15 +109,21 @@ byte PT2313::eqsubroutine(int val){
 void PT2313::balance(int val) {
 	val = boundary(val,-31,31);
 	if (val == 0) {
-		writeByte(PT2313_L_ATT_REG|0x00);
-		writeByte(PT2313_R_ATT_REG|0x00);
+		writeByte(PT2313_RL_ATT_REG|0x00);
+		writeByte(PT2313_RR_ATT_REG|0x00);
+		writeByte(PT2313_FL_ATT_REG|0x00);
+		writeByte(PT2313_FR_ATT_REG|0x00);
 	} else {
 		if (val < 0) {
-			writeByte(PT2313_L_ATT_REG|0x00);
-			writeByte(PT2313_R_ATT_REG|((byte)abs(val)));
+			writeByte(PT2313_RL_ATT_REG|0x00);
+			writeByte(PT2313_RR_ATT_REG|((byte)abs(val)));
+			writeByte(PT2313_FL_ATT_REG|0x00);
+			writeByte(PT2313_FR_ATT_REG|((byte)abs(val)));
 		} else {
-			writeByte(PT2313_L_ATT_REG|((byte)abs(val)));
-			writeByte(PT2313_R_ATT_REG|0x00);
+			writeByte(PT2313_RL_ATT_REG|((byte)abs(val)));
+			writeByte(PT2313_RR_ATT_REG|0x00);
+			writeByte(PT2313_FL_ATT_REG|((byte)abs(val)));
+			writeByte(PT2313_FR_ATT_REG|0x00);
 		}
 	}
 }
